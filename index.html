@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>はじめてのthree.js</title>
+  <style>
+   body{margin: 0;}
+   canvas {widht: 100%; height: 100% }
+  </style>
+ </head>
+ <body>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.min.js"></script>
+  <script type="text/javascript">
+   var scene = new THREE.Scene();
+   var camera = new THREE.PerspectiveCamera(75, window.innerWidt/window.innerHeight, 0.1, 1000 );
+   
+   var renderer = new THREE.WebGLRenderer();
+   renderer.setSize( window.innerWidth, window.innerHeight);
+   docment.body.appendChild( renderer.domElement);
+   
+   window.addEventListener('resize',fubction(){
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+   },false );
+   
+   var geometry = new THREE.BoxGeometry(1,1,1);
+   var material = new THREE.MeshBasicMaterial({color: 0xccffcc});
+   var mesh = new THREE.mesh( geometry, material);
+   scene.add( mesh );
+   
+   camera.position.Z = 5;
+   
+   var clock = new THREE.Clock();
+   var render = function() {
+    requestAnimationFrame ( render );
+    
+    var delta_time = clock.getDelta();
+    mash.rotation.x += 0.1 * delta_time;
+    mesh.rotation.Y += 0.3 * delta_time;
+    
+    renderer.render(scene, camera);
+   };
+   render();
+  </script>
+ </body>
+ </html>
+   
+   
