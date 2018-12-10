@@ -9,7 +9,7 @@
   </style>
  </head>
  <body>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.min.js/87/three.min.js"></script>
   <script type="text/javascript">
    var scene = new THREE.Scene();
    var camera = new THREE.PerspectiveCamera(75, window.innerWidt/window.innerHeight, 0.1, 1000 );
@@ -28,6 +28,8 @@
    light.position.set(0,100,30);
    scene.add(light);
    scene.add(new THREE.AmbientLight(0x666666));
+   
+   //var loader = new ThREE.TextureLoader()
    
    var geometry = new THREE.BoxGeometry(1,1,1);
    var material = new THREE.MeshBasicMaterial({color: 0xccffcc});
