@@ -18,7 +18,7 @@
    renderer.setSize( window.innerWidth, window.innerHeight);
    docment.body.appendChild( renderer.domElement);
    
-   window.addEventListener('resize',fubction(){
+   window.addEventListener('resize',fubction() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
